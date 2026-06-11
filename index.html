@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Zolo Wallet" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <title>Zolo Wallet</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main id="app" aria-label="Zolo Wallet Roblox companion app">
+    <section id="payScreen" class="screen green-screen screen-active" data-screen="pay">
+      <header class="top-shell green-top">
+        <button class="icon-circle green-soft" id="openProfile" aria-label="Open profile">
+          <span class="face-icon"></span>
+        </button>
+        <div class="top-actions">
+          <button class="mini-icon" id="scanPayBtn" aria-label="Scan code"><span class="scan-icon"></span></button>
+          <button class="mini-icon" id="searchPayBtn" aria-label="Search"><span class="search-icon"></span></button>
+          <button class="avatar-btn" id="openProfile2" aria-label="Profile"><span>M</span><b>1</b></button>
+        </div>
+      </header>
+
+      <section class="hero-amount-wrap">
+        <div id="payAmount" class="big-money black-money">$0</div>
+      </section>
+
+      <section id="mainKeypad" class="home-keypad" aria-label="Amount keypad"></section>
+
+      <section class="pay-actions">
+        <button class="green-pill" id="poolBtn">Pool</button>
+        <button class="green-pill" id="requestBtn">Request</button>
+        <button class="black-pay-btn" id="payBtn">Pay</button>
+      </section>
+    </section>
+
+    <section id="balanceScreen" class="screen dark-screen scroll-screen" data-screen="balance">
+      <header class="top-shell dark-top sticky-top">
+        <button class="icon-circle dark-icon" id="openProfile3" aria-label="Open profile"><span class="face-icon light"></span></button>
+        <div class="top-actions">
+          <button class="icon-circle dark-icon" aria-label="Search"><span class="search-icon light"></span></button>
+          <button class="avatar-btn" id="openProfile4" aria-label="Profile"><span>M</span><b>1</b></button>
+        </div>
+      </header>
+
+      <div class="balance-content">
+        <div class="card-banner">
+          <div class="banner-chip"></div>
+          <span>Get your game card</span>
+        </div>
+
+        <section class="balance-hero">
+          <div class="balance-heading-row">
+            <h1>Game balance <span>›</span></h1>
+            <button class="plain-icon" aria-label="Hide balance"><span class="eye-off"></span></button>
+          </div>
+          <div id="balanceAmount" class="balance-money">$0.00</div>
+        </section>
+
+        <div class="two-button-row">
+          <button id="addMoneyBtn" class="dark-pill">Add money</button>
+          <button id="withdrawBtn" class="dark-pill">Withdraw</button>
+        </div>
+
+        <button class="wide-card status-card">
+          <span class="phone-outline"></span>
+          <strong>Zolo Green</strong>
+          <em>Earn status</em>
+        </button>
+
+        <section class="wide-card savings-card">
+          <div>
+            <h2>Savings</h2>
+            <div id="savingsAmount" class="saving-money">$0.00</div>
+            <p>Up to 3.25% bonus</p>
+          </div>
+          <div class="round-green-symbol">$</div>
+        </section>
+
+        <section class="more-section">
+          <h2>More for you</h2>
+          <article class="tax-card">
+            <p>Game perks</p>
+            <h3>Boost your wallet from start to finish</h3>
+            <div class="folder-art">
+              <span class="sticker">↗</span>
+              <span class="sticker two">✓</span>
+            </div>
+          </article>
+
+          <div class="feature-list">
+            <button class="feature-row"><span class="feature-art money-stack">▤</span><span><strong>Borrow</strong><em>Unlock up to $500</em></span><b>Start</b></button>
+            <button class="feature-row"><span class="feature-art coin-art">₿</span><span><strong>Bitcoin</strong><em>Learn and invest</em></span><b>Start</b></button>
+            <button class="feature-row"><span class="feature-art receipt-art">▧</span><span><strong>Paychecks</strong><em>Get paid faster</em></span><b>Start</b></button>
+            <button class="feature-row"><span class="feature-art stock-art">⌁</span><span><strong>Stocks</strong><em>Watch your favorites</em></span><b>Start</b></button>
+            <button class="feature-row"><span class="feature-art pool-art">▦</span><span><strong>Pools</strong><em>Collect money with anyone</em></span><b>Start</b></button>
+          </div>
+        </section>
+
+        <section class="add-list-section">
+          <h2>Add money</h2>
+          <button class="settings-row"><span class="cash-icon"></span><strong>Deposit paper money</strong><i>›</i></button>
+          <button class="settings-row"><span class="check-icon"></span><strong>Deposit check</strong><i>›</i></button>
+          <button class="settings-row"><span class="reload-icon"></span><strong>Auto reload</strong><i>›</i></button>
+          <button class="settings-row"><span class="direct-icon"></span><strong>Direct deposit</strong><i>›</i></button>
+          <button class="settings-row"><span class="wire-icon"></span><strong>Get bank or wire transfer</strong><i>›</i></button>
+          <button class="settings-row"><span class="scan-icon light"></span><strong>Deposit Tokens</strong><i>›</i></button>
+          <p class="fine-print">Zolo Wallet is a fictional Roblox companion wallet. Balances shown here are for your game only and are not real money, banking, savings, or investing services.</p>
+        </section>
+      </div>
+    </section>
+
+    <section id="activityScreen" class="screen dark-screen scroll-screen" data-screen="activity">
+      <header class="top-shell dark-top sticky-top">
+        <button class="icon-circle dark-icon" aria-label="Open profile"><span class="face-icon light"></span></button>
+        <div class="top-actions">
+          <button class="icon-circle dark-icon"><span class="search-icon light"></span></button>
+          <button class="avatar-btn"><span>M</span><b>1</b></button>
+        </div>
+      </header>
+
+      <section class="people-strip" id="peopleStrip"></section>
+
+      <section class="activity-content">
+        <h1>This month</h1>
+        <div id="activityList" class="activity-feed"></div>
+      </section>
+    </section>
+
+    <nav class="floating-tabs" id="bottomTabs" aria-label="Main tabs">
+      <button class="tab-btn" data-tab="balance" aria-label="Balance"><span class="bank-icon"></span></button>
+      <button class="tab-btn active" data-tab="pay" aria-label="Pay"><span>$</span></button>
+      <button class="tab-btn" data-tab="activity" aria-label="Activity"><span class="clock-icon"></span><b id="activityBadge">1</b></button>
+    </nav>
+
+    <section id="addSheet" class="bottom-sheet" aria-hidden="true">
+      <div class="dimmed-backdrop"></div>
+      <div class="sheet-panel add-panel">
+        <div class="grabber"></div>
+        <header class="sheet-title-block">
+          <h2>Add money</h2>
+          <p id="sheetBalanceLabel">Game balance $0.00</p>
+        </header>
+        <section class="preset-grid">
+          <button data-preset="10">$10</button>
+          <button data-preset="25">$25</button>
+          <button data-preset="50">$50</button>
+          <button data-preset="100">$100</button>
+          <button data-preset="200">$200</button>
+          <button id="customAmountBtn">•••</button>
+        </section>
+        <button class="funding-row" id="fundingSourceBtn"><span>From</span><b>VISA</b><strong>Zolo Game debit 2435</strong><i>›</i></button>
+        <button id="sheetAddBtn" class="disabled-wide-btn" disabled>Add</button>
+      </div>
+    </section>
+
+    <section id="customAddScreen" class="full-flow dark-screen" aria-hidden="true">
+      <header class="flow-top">
+        <button class="x-btn" id="closeCustomAdd" aria-label="Close">×</button>
+        <div>
+          <h2>Add money</h2>
+          <p id="customBalanceLabel">Game balance $0.00</p>
+        </div>
+        <span></span>
+      </header>
+      <section class="custom-money-center">
+        <div id="customAddAmount" class="custom-money">$0</div>
+      </section>
+      <button class="funding-row custom-funding"><span>From</span><b>VISA</b><strong>Zolo Game debit 2435</strong><i>›</i></button>
+      <button id="customAddBtn" class="disabled-wide-btn custom-main-add" disabled>Add</button>
+      <section id="addKeypad" class="phone-keypad"></section>
+    </section>
+
+    <section id="sendSheet" class="bottom-sheet" aria-hidden="true">
+      <div class="dimmed-backdrop green-dim"></div>
+      <div class="sheet-panel pay-panel">
+        <div class="grabber"></div>
+        <button class="x-btn floating-x" id="closeSendSheet" aria-label="Close">×</button>
+        <h2 id="sendTitle">Pay $0 <span>to</span></h2>
+        <div class="search-row">
+          <span class="search-icon muted"></span>
+          <input id="recipientSearch" placeholder="Name, tag, email, phone" autocomplete="off" />
+          <span class="scan-icon light"></span>
+        </div>
+        <div id="recipientList" class="recipient-list"></div>
+      </div>
+    </section>
+
+    <section id="noteScreen" class="full-flow dark-screen" aria-hidden="true">
+      <header class="note-top">
+        <button class="back-btn" id="noteBack" aria-label="Back">‹</button>
+      </header>
+      <section class="note-summary">
+        <h2 id="noteLineOne">Pay $0 <span>to</span></h2>
+        <div id="noteRecipientLine" class="note-recipient"></div>
+      </section>
+      <div class="note-input-row">
+        <input id="noteInput" placeholder="Note (Required)" autocomplete="off" />
+        <button id="reviewBtn" disabled>Review</button>
+      </div>
+    </section>
+
+    <section id="profileScreen" class="full-flow dark-screen profile-flow" aria-hidden="true">
+      <header class="profile-actions-top">
+        <button class="icon-circle dark-icon big-x" id="closeProfile" aria-label="Close">×</button>
+        <div>
+          <button class="icon-circle dark-icon"><span class="scan-icon light"></span></button>
+          <button class="icon-circle dark-icon"><span class="upload-icon"></span></button>
+        </div>
+      </header>
+      <section class="profile-content">
+        <div class="profile-avatar">M<span class="camera-dot">●</span></div>
+        <h1>Mikye White</h1>
+        <div class="profile-pills">
+          <button>$mikye55⌄</button>
+          <button>Edit profile</button>
+        </div>
+        <button class="profile-row"><span class="camera-icon"></span><strong>Add a profile photo</strong><em>Help people find you</em><i>›</i></button>
+        <button class="profile-row"><span class="plus-green">+</span><strong>Invite friends</strong><em>Get up to $500</em><i>›</i></button>
+        <h2>Account &amp; settings</h2>
+        <button class="settings-row"><span class="person-icon"></span><strong>Personal information</strong><em class="red-dot"></em><i>›</i></button>
+        <button class="settings-row"><span class="bank-icon light"></span><strong>Linked accounts</strong><i>›</i></button>
+        <button class="settings-row"><span class="shield-icon"></span><strong>Security</strong><i>›</i></button>
+        <button class="settings-row"><span class="eye-off"></span><strong>Privacy</strong><i>›</i></button>
+        <button class="settings-row"><span class="star-icon"></span><strong>Favorites</strong><i>›</i></button>
+      </section>
+    </section>
+
+    <section id="successOverlay" class="success-overlay" aria-hidden="true">
+      <svg class="success-check" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <path d="M34 62 L52 79 L88 42"></path>
+      </svg>
+      <h2 id="successText">Done</h2>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
